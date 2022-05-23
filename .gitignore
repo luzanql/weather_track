@@ -1,0 +1,7 @@
+.vscode/
+/coverage/
+/vendor/
+/logs/*
+.phpunit.result.cache
+.env
+composer.lock
