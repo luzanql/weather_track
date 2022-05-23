@@ -6,14 +6,18 @@ namespace App\Controllers;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Container\ContainerInterface;
 use App\Webservices\WeatherClient as WeatherClient;
 
 
 class WeatherController
 {
     /**
+     * Calls Weather api and store the request call
      *
+     * @param Request $request
+     * @param Response $response
+     * @param array $args
+     * @return Response
      */
     public function getWeather(Request $request, Response $response, array $args): Response
     {

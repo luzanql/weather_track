@@ -163,10 +163,7 @@ class AuthController
     {
 
         $params = json_decode($request->getBody());
-        $credentials = [
-            'email'    => $params->email,
-            'password' => password_hash($params->password, PASSWORD_BCRYPT)
-        ];
+
         // Validate user and password
         $user = User::where('email', $params->email);
 

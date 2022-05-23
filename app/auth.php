@@ -36,5 +36,22 @@ return function (App $app) {
 
         return $response;
     });
+    // Add middlewlre to configure JWT authentication
+    $app->add(new JwtAuthentication([
+        "path" => ["/api/v1/weather", "/api/v1/history"],
+        "attribute" => "jwt",
+        "secret" => $_ENV["SECRET_TOKEN"],
+        "secure" => true,
+        "relaxed" => ["localhost"],
+        "error" => function ($response, $arguments) {
+            $data["status"] = "error";
+            $data["message"] = $arguments["message"];
+
+            $response->getBody()->write(
+                json_encode($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT)
+            );
+            return $response->withHeader("Content-Type", "application/json");
+        }
+    ]));
 
 };
