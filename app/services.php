@@ -24,6 +24,11 @@ return function (ContainerBuilder $containerBuilder) {
                 $capsule->bootEloquent();
                 return $capsule;
             }
+        ],
+        [
+            'view' => function() {
+                return \Slim\Views\Twig::create('templates');
+            }
         ]
     );
 

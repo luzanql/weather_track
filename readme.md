@@ -33,6 +33,9 @@ Api documentation was generate using Swagger. To update documentation according 
 To display documentation please navigate to route:
  `http://localhost:8080/docs/v1`
 
+You should see something like:
+<img src="public/images/swagger.png">
+
 ## Postman Collection
 A postman collection is included in the project.
 

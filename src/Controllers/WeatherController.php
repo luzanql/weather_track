@@ -7,8 +7,21 @@ use App\Models\RequestLog;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use App\Webservices\WeatherClient as WeatherClient;
-
-
+/**
+ * @OA\Info(
+ *      version="1.0.0",
+ *      title="Weather Track Api",
+ *      description="Curious about how you feel on gray days? Do you prefer sunny days? Track your weather requests!"
+ * ),
+ * @OA\SecurityScheme(
+ *   securityScheme="token",
+ *   type="apiKey",
+ *   name="Authorization",
+ *   in="header"
+ * )
+ *
+ *
+ */
 class WeatherController
 {
     /**
@@ -47,7 +60,23 @@ class WeatherController
     }
 
     /**
-    * Get a user historical data
+     * History of queries made to the API service by specific user
+     *
+     *   @OA\Get(
+     *     tags={"Weather"},
+     *     security={{"token": {}}},
+     *     path="/api/v1/history",
+     *     operationId="getHistory",
+     *     @OA\Response(
+     *      response="200",
+     *      description="OK",
+     *      @OA\JsonContent(
+     *              type="object",
+     *              ref="#/components/schemas/History",
+     *          )
+     *     )
+     * )
+     *
     *
     * @param Request $request
     * @param Response $response
