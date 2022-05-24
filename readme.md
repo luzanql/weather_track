@@ -1,7 +1,9 @@
 ### Weather Track API
-This project is a REST API application in which a user can sign up and use it to track the historical data of its weather requests. This Project used the Open Weather Map API https://rapidapi.com/community/api/open-weather-map/
-(WIP): A user can add mood  and a note to the request logs. This will be in order to collect data of how they feel
-(Maybe in the future, users can realizes gray days are vibrant than sunny days)
+This project is a REST API application in which a user can sign up and use it to track the historical data of its weather requests. This Project uses the Open Weather Map API https://rapidapi.com/community/api/open-weather-map/
+
+### Backlog Features
+ A user can add mood  and a note to the request logs. This will be in order to collect data of how they feel
+(users could realize gray days are vibrant than sunny days)
 ## Requirements
 `Weather Track API` uses at least PHP 7.4.28, and a Conexion to MySQL
 
