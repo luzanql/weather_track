@@ -24,8 +24,9 @@ return function (App $app)
     // Sign in a User
     $app->post('/api/v1/user/signin', AuthController::class . ':signin');
 
-    // Manage Stock
+    // Weather Routes
     $app->get('/api/v1/weather', WeatherController::class . ':getWeather');
+    $app->get('/api/v1/history', WeatherController::class . ':getHistory');
 
     // 2nd middleware to throw 401 with correct slim exception
     // Reformat when lin updates to v4, see: https://github.com/tuupola/slim-basic-auth/issues/95
